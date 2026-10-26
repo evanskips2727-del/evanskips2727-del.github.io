@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evans Kiplangat · Data Analyst & Data Engineer</title>
+<meta name="description" content="Data Analyst & Data Engineer building ETL pipelines, dashboards and machine learning models with Python, SQL and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf9;--surface:#fff;--text:#18181b;--muted:#52525b;--line:#e4e4e7;--accent:#0d9488;--accent2:#0f766e;--soft:#ccfbf1;--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0f14;--surface:#121821;--text:#f4f4f5;--muted:#a1a1aa;--line:#1f2937;--accent:#2dd4bf;--accent2:#5eead4;--soft:#0f2e2b;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0f14;--surface:#121821;--text:#f4f4f5;--muted:#a1a1aa;--line:#1f2937;--accent:#2dd4bf;--accent2:#5eead4;--soft:#0f2e2b;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em}.logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;font-size:14px;font-weight:500;color:var(--muted)}
+nav ul a:hover{color:var(--accent)}
+@media(max-width:640px){nav ul li:nth-child(n+4){display:none}nav ul{gap:16px}}
+.hero{padding:84px 0 56px}
+.tag{display:inline-flex;align-items:center;gap:8px;font:500 12px "JetBrains Mono",monospace;color:var(--accent2);background:var(--soft);padding:6px 12px;border-radius:99px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:p 2s infinite}
+@keyframes p{50%{opacity:.3}}
+h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;letter-spacing:-.035em;font-weight:800;margin:22px 0 18px;max-width:16em}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:1.15rem;color:var(--muted);max-width:40em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#04201d}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:48px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:2rem;letter-spacing:-.03em;color:var(--accent)}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:64px 0}
+.eyebrow{font:500 12px "JetBrains Mono",monospace;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.025em;margin:8px 0 32px;line-height:1.2}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card h3{font-size:1.2rem;letter-spacing:-.01em;margin:10px 0 8px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.card li{margin:4px 0}
+.cat{font:500 11px "JetBrains Mono",monospace;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+.chip{font-size:12px;font-weight:500;padding:4px 10px;border-radius:99px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.card .links{margin-top:auto;padding-top:8px;display:flex;gap:18px;font-weight:600;font-size:14px;color:var(--accent2)}
+.card .links a:hover{text-decoration:underline}
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 30px 26px}
+.job:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.job h3{font-size:1.05rem}.job .meta{font-size:13px;color:var(--muted);font-family:"JetBrains Mono",monospace}
+.job ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.skills{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.skills .card{padding:22px}
+.certs{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14.5px}
+.cert small{display:block;color:var(--muted);font-size:12.5px}
+.contact{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:56px 24px;box-shadow:var(--shadow)}
+.contact h2{margin-bottom:12px}.contact p{color:var(--muted);max-width:34em;margin:0 auto}
+.contact .cta{justify-content:center}
+footer{padding:32px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.dot{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Evans<span>.</span>K</a>
+<ul><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#skills">Skills</a></li><li><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<span class="tag"><i class="dot"></i>Open to roles · Nairobi, Kenya · Remote-friendly</span>
+<h1>I turn raw data into <em>decisions</em> people can act on.</h1>
+<p class="lead">Data Analyst &amp; Data Engineer with a BSc in Applied Statistics with Computing. I build ETL pipelines, Power BI dashboards and machine learning models with Python and SQL, from messy source data to a result a stakeholder can use.</p>
+<div class="cta">
+<a class="btn p" href="#projects">View my work</a>
+<a class="btn" href="https://github.com/evans25575" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/evans-kiplangat-375646179" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:evanskips2727@gmail.com">Email me</a>
+</div>
+<div class="stats">
+<div class="stat"><b>76.2%</b><span>Churn recall, up from ~52% baseline</span></div>
+<div class="stat"><b>0.824</b><span>ROC-AUC on tuned XGBoost model</span></div>
+<div class="stat"><b>7,043</b><span>Customer accounts analysed end to end</span></div>
+<div class="stat"><b>~40%</b><span>Fewer data-ingestion errors at Amtech</span></div>
+</div>
+</div>
+
+<section id="projects"><div class="wrap">
+<div class="eyebrow">Selected work</div><h2>Projects that ship, not just notebooks</h2>
+<div class="grid">
+<article class="card rv"><span class="cat">Machine learning · NexAfrica internship</span>
+<h3>Customer Churn Prediction Pipeline</h3>
+<p>End-to-end pipeline on 7,043 telecom accounts to find who is about to leave and why, built so retention teams can intervene early.</p>
+<ul><li>Found that 0–5 month accounts, month-to-month contracts, electronic-check payers and fibre-optic customers carry the highest risk.</li><li>Engineered features (TenureGroup, TotalServices, CostPerMonthOfTenure), expanding to 35 model-ready dimensions.</li><li>Handled a 73.5% / 26.5% imbalance with SMOTE inside an imblearn pipeline to prevent leakage; tuned with 5-fold GridSearchCV for recall.</li><li>Compared Logistic Regression, Random Forest and XGBoost; best model reached 76.2% recall and 0.824 ROC-AUC.</li></ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">scikit-learn</span><span class="chip">SMOTE</span><span class="chip">GridSearchCV</span></div>
+<div class="links"><a href="https://github.com/evanskips2727-del/1Customer-Churn-prediction-Using-Machine-Learning-" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Data engineering · Analytics</span>
+<h3>Africa Public Health Intelligence Platform</h3>
+<p>A public-health early-warning prototype that combines OWID indicators, WHO Disease Outbreak News, NASA POWER climate signals and World Bank population context into one explainable risk view.</p>
+<ul><li>Evaluated 63 country–disease signals; the prototype classified 2 as Critical and 24 as High.</li><li>Weighted, explainable risk score that renormalises weights when inputs are missing.</li><li>A screening prototype, not an official WHO tool or a validated outbreak-probability model.</li></ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">statsmodels</span><span class="chip">Plotly</span><span class="chip">Streamlit</span></div>
+<div class="links"><a href="https://public-health-early-warning.streamlit.app/" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/evanskips2727-del/Africa-Public-Health-Intelligence" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Analytics · NLP · CodeAlpha internship</span>
+<h3>One Health Intelligence Dashboard</h3>
+<p>An interactive six-section dashboard linking WHO outbreak announcements with Nairobi climate observations from NASA POWER.</p>
+<ul><li>Processed 493 WHO outbreak records and 2,192 daily climate observations (2020–2025).</li><li>Screened 49 climate observations in 2025 for temperature or precipitation anomalies, flagged for review rather than as confirmed outbreaks.</li><li>VADER sentiment analysis of announcement text, with limitations documented openly.</li></ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">Web scraping</span><span class="chip">Plotly</span><span class="chip">VADER</span><span class="chip">Streamlit</span></div>
+<div class="links"><a href="https://codealphaonehealthintelligence-jjm8evelq4rluyvyznwtpd.streamlit.app/" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/evanskips2727-del/CodeAlpha_OneHealthIntelligence" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Machine learning · Fintech</span>
+<h3>Loan Guard AI: Credit Risk Scoring</h3>
+<p>A risk-scoring app for microfinance institutions, SACCOs and digital lenders that predicts default likelihood where credit-bureau data is thin.</p>
+<ul><li>Engineered debt-to-income, loan-to-asset and repayment signals; compared XGBoost, LightGBM and Random Forest.</li><li>SHAP explanations at global and per-applicant level for transparent credit decisions.</li><li>Real-time scoring in a Streamlit app with a Plotly analytics dashboard; limitations documented.</li></ul>
+<div class="chips"><span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">SHAP</span><span class="chip">Streamlit</span><span class="chip">Plotly</span></div>
+<div class="links"><a href="https://3v5yyiiskavaufqjdjckgn.streamlit.app/" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/evans25575/-Loan-Default-Prediction-System" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Data engineering · Streaming</span>
+<h3>Real-Time Stock Analysis Pipeline</h3>
+<p>A streaming pipeline that ingests market data from APIs, processes it in near real time and stores it for analysis and dashboards.</p>
+<ul><li>Apache Kafka for ingestion, Apache Spark for processing, MySQL for storage.</li><li>Scheduling, monitoring and visual reporting of price trends and trading volume.</li></ul>
+<div class="chips"><span class="chip">Kafka</span><span class="chip">Spark</span><span class="chip">MySQL</span><span class="chip">Python</span><span class="chip">ETL</span></div>
+<div class="links"><a href="https://github.com/evans25575/Real-time-stock-analysis-pipeline" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Geospatial analytics · Agriculture</span>
+<h3>SmartCrop Lite</h3>
+<p>A decision-support dashboard for smallholder farmers in Kenya that answers when to plant, where to sell and what inputs to apply.</p>
+<ul><li>County-level maps for crop prices, rainfall anomalies against a 20-year average, and soil fertility and pH.</li><li>Rule-based planting signals (Plant, Watch, Delay) and fertiliser guidance.</li><li>Built on demonstration data, with live CHIRPS and iSDA integration on the roadmap.</li></ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">GeoPandas</span><span class="chip">Plotly Mapbox</span><span class="chip">Streamlit</span></div>
+<div class="links"><a href="https://smartcrop-lite-bjjh8evg2pyzjwnwymzmwb.streamlit.app/" target="_blank" rel="noopener">Live demo →</a><a href="https://github.com/evans25575/smartcrop-lite" target="_blank" rel="noopener">Source code →</a></div></article>
+
+<article class="card rv"><span class="cat">Monitoring &amp; evaluation · Digital health</span>
+<h3>Kenya Mental-Health M&amp;E Dashboard</h3>
+<p>A prototype dashboard that structures indicators and reporting views for service-coverage review and data-quality checks.</p>
+<ul><li>4,920 records across 41 counties and 205 health facilities.</li><li>Surfaces reported treatment gaps of roughly 25% to 70% across the analysed sources and areas.</li><li>Indicators aligned with MoH/DHIS2-style reporting; a portfolio prototype, not a live KHIS deployment.</li></ul>
+<div class="chips"><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">M&amp;E indicators</span><span class="chip">Data quality</span></div>
+<div class="links"><a href="https://github.com/evans25575/kenya-mh-dashboard" target="_blank" rel="noopener">Source code →</a></div></article>
+</div>
+<p style="margin-top:22px;color:var(--muted);font-size:14.5px">More on GitHub: an AI Data Analyst Agent (natural-language-to-SQL with SELECT-only safeguards), Heart Disease Prediction dashboard, Chest X-ray CNN classifier, and web-scraping and telemetry analysis.</p>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<div class="eyebrow">Experience</div><h2>Where I've applied it</h2>
+<div class="tl">
+<div class="job rv"><h3>Data Engineer / Data Analyst · Amtech Technologies Ltd</h3><div class="meta">Jan 2024 – Dec 2025</div>
+<ul><li>Built and maintained data preparation and reporting workflows with SQL, Python, relational databases and BI tools.</li><li>Improved reporting turnaround by about 30% by streamlining recurring data preparation steps.</li><li>Cut data-ingestion errors by about 40% through validation checks, cleaning and more consistent ingestion.</li><li>Supported KPI reporting, dashboard development, data integration and data-quality investigations.</li></ul></div>
+<div class="job rv"><h3>Field Data Supervisor · Rural Roads Economic Development Project (RREDP)</h3><div class="meta">Jul – Aug 2026</div>
+<ul><li>Supervised field data collection and quality for a national roads programme; built a traffic-counter tool in Python.</li></ul></div>
+<div class="job rv"><h3>Machine Learning Intern · NexAfrica</h3><div class="meta">Sep – Oct 2026</div>
+<ul><li>Delivered the customer churn prediction project above as the final deliverable.</li></ul></div>
+<div class="job rv"><h3>Data Analytics Intern · CodeAlpha</h3><div class="meta">Oct 2026 – present</div>
+<ul><li>Built the One Health Intelligence project: 493 WHO records and 2,192 climate observations, with web scraping, exploratory analysis, visualisation and sentiment analysis.</li></ul></div>
+<div class="job rv"><h3>Monitoring &amp; Evaluation / Data Analyst Intern · Bomet County Government</h3><div class="meta">Apr – Aug 2022</div>
+<ul><li>Supported field-data collection with ODK and SurveyCTO/Kobo-style tools, plus data checking, organisation and reporting in a public-sector setting.</li></ul></div>
+<div class="job rv"><h3>Freelance Data Analyst</h3><div class="meta">2020 – present</div>
+<ul><li>Part-time analytics projects for small organisations while studying and since graduating.</li><li>Built the Kenya mental-health M&amp;E dashboard prototype described above.</li></ul></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<div class="eyebrow">Toolkit</div><h2>Skills across the data lifecycle</h2>
+<div class="skills">
+<div class="card rv"><span class="cat">Languages</span><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">STATA</span><span class="chip">SPSS</span></div></div>
+<div class="card rv"><span class="cat">Data engineering</span><div class="chips"><span class="chip">ETL / ELT</span><span class="chip">Apache Airflow</span><span class="chip">dbt</span><span class="chip">Kafka</span><span class="chip">Spark</span><span class="chip">BigQuery</span><span class="chip">MySQL</span></div></div>
+<div class="card rv"><span class="cat">Machine learning</span><div class="chips"><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">TensorFlow</span><span class="chip">SHAP</span><span class="chip">NLP (VADER)</span></div></div>
+<div class="card rv"><span class="cat">BI &amp; delivery</span><div class="chips"><span class="chip">Power BI (DAX)</span><span class="chip">Advanced Excel</span><span class="chip">Streamlit</span><span class="chip">Plotly</span><span class="chip">Git / GitHub</span><span class="chip">ODK / REDCap</span></div></div>
+</div></div></section>
+
+<section id="credentials"><div class="wrap">
+<div class="eyebrow">Education &amp; credentials</div><h2>Formal training, verified learning</h2>
+<div class="cert rv" style="margin-bottom:12px"><b>BSc Applied Statistics with Computing</b> · Moi University<small>2019 – 2023 · Second Class Honours, Upper Division</small></div>
+<div class="certs">
+<div class="cert rv">Google Data Analytics Professional Certificate</div>
+<div class="cert rv">IBM SkillsBuild: Data Fundamentals<small>with ICT Authority Kenya · Certified</small></div>
+<div class="cert rv">Cybersecurity Fundamentals<small>ICT Authority Kenya with IBM</small></div>
+<div class="cert rv">Data Analytics Training<small>ICT Authority of Kenya</small></div>
+<div class="cert rv">STATA and SPSS (Distinction)</div>
+<div class="cert rv">Data Privacy &amp; Protection<small>APHRC</small></div>
+<div class="cert rv">Standard Chartered Credit Analyst Simulation<small>Forage</small></div>
+<div class="cert rv">BCG Data Science Simulation<small>Forage</small></div>
+<div class="cert rv">Mastercard Foundation Associates Programme</div>
+<div class="cert rv">CPA Kenya, Level II<small>In progress</small></div>
+<div class="cert rv">Advanced Excel Masterclass<small>ICT Authority / ChezaStemEd, Aug 2026</small></div>
+<div class="cert rv">AI Level Up Practitioner<small>IBM SkillsBuild</small></div>
+<div class="cert rv">AI in Healthcare<small>IBM SkillsBuild</small></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact rv">
+<div class="eyebrow">Let's talk</div>
+<h2>Hiring for a data role? Let's build something useful.</h2>
+<p>I'm available for analyst, data engineering and ML roles, on-site in Nairobi or remote. Fluent in English, Kiswahili, Kalenjin and Maasai.</p>
+<div class="cta"><a class="btn p" href="mailto:evanskips2727@gmail.com">evanskips2727@gmail.com</a><a class="btn" href="tel:+254728324898">+254 728 324 898</a><a class="btn" href="https://www.linkedin.com/in/evans-kiplangat-375646179" target="_blank" rel="noopener">LinkedIn</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Evans Kiplangat · Nairobi, Kenya</div></footer>
+<script>
+(function(){var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+els.forEach(function(e){io.observe(e)})})();
+</script>
+</body>
+</html>
